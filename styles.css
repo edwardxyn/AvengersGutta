@@ -29,6 +29,8 @@ body {
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
+    position: relative;
+    top: 20px;
   }
   
   header ul a:hover {
@@ -36,6 +38,14 @@ body {
     transition: 0.5s;
   }
   
+  .harry-potter-logo {
+      height: 120px;
+      width: auto;
+      position: relative;
+      top: 10px;
+  }
+  
+
   .header .logo {
     color: white;
     float: left;
