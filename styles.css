@@ -77,7 +77,7 @@ body {
     .houses-container {
         position: relative;
         top: 30%;
-        left: 25%;
+        left: 14%;
         display: flex;
     }
     
@@ -87,26 +87,56 @@ body {
 
     .gryffindor-img {
         height: 300px;
-        border: 2px solid;
-        padding: 5px;
+        padding: 20px;
+        border-radius: 25px;
     }
 
     .hufflepuff-img {
         height: 300px;
-        border: 2px solid;
-        padding: 5px;
+        padding: 20px;
+        border-radius: 25px;
     }
 
     .ravenclaw-img {
         height: 300px;
-        border: 2px solid;
-        padding: 5px;
+        padding: 20px;
+        border-radius: 25px;
     }
 
     .slytherin-img {
         height: 300px;
-        border: 2px solid;
-        padding: 5px;
+        padding: 20px;
+        border-radius: 25px;
     }
+
+     .gryffindor-img:hover {
+        background: rgba(174, 0, 1, .8);
+        transition: ease-in-out .2s;
+    }
+    .hufflepuff-img:hover {
+        background: rgba(240, 199, 94, .8);
+        transition: ease-in-out .2s;
+    }
+    .ravenclaw-img:hover {
+        background: rgba(34, 47, 91, .8);
+        transition: ease-in-out .2s;
+    }
+    .slytherin-img:hover {
+        background: rgba(42, 98, 61, .8);
+        transition: ease-in-out .2s;
+    }
+     
+    .houses-container:hover .houses-box{
+        filter:blur(3px);
+        opacity:.5;
+        transform: scale(.98);
+        box-shadow:none;
+        transition: ease-in-out .2s;
+      }
+      .houses-container:hover .houses-box:hover{
+        transform:scale(1);
+        filter:blur(0px);
+        opacity:1;
+      }
 
 }
