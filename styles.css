@@ -1,4 +1,130 @@
 * {
     padding: 0;
     margin: 0;
+    text-decoration: none;
+}
+
+body {
+    font-family: sans-serif;
+      background-color: white;
+  }
+  
+  header {
+    background: #0082e6;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+  }
+  
+  header ul li {
+    display: block;
+    line-height: 80px;
+    margin: 0 10px;
+  }
+  
+  /* Padding og border-radius for hover effekt */
+  header ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+  }
+  
+  header ul a:hover {
+    background: #1b9bff;
+    transition: 0.5s;
+  }
+  
+  .header .logo {
+    color: white;
+    float: left;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 23px;
+    font-weight: bold;
+  }
+  
+  /* Her starter Hamburger-menyen */
+  .header .checkmark-box {
+    display: none;
+  }
+  
+  .header .menu {
+    clear: both;
+      max-height: 0;
+    transition: max-height 0.2s ease-out;
+  }
+  
+  .header .hamburger-menu {
+    padding: 38px 20px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+  }
+  
+  .header .hamburger-menu .nav-icon {
+    background: white;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background 0.2s ease-out;
+  }
+  
+  .header .hamburger-menu .nav-icon::before {
+    background: white;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    top: 5px;
+  }
+  
+  .header .hamburger-menu .nav-icon::after {
+    background: white;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    top: -5px;
+  }
+  
+  .header .checkmark-box:checked ~ .menu {
+    max-height: 240px;
+  }
+  
+  /* Hamburger-meny "X" animasjon */
+  .header .checkmark-box:checked ~ .hamburger-menu .nav-icon {
+    background: transparent;
+  }
+  
+  .header .checkmark-box:checked ~ .hamburger-menu .nav-icon::before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  
+  .header .checkmark-box:checked ~ .hamburger-menu .nav-icon::after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  
+  /* "Hamburger meny ferdig" @media for å skape resposiv navbar */
+  @media (min-width: 768px) {
+    header li {
+      float: left;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .hamburger-menu {
+      display: none;
+    }
+    /* Hamburger-meny ferdig */
 }
