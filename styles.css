@@ -65,12 +65,48 @@ body {
       max-height: none;
     }
     
-    section {
+    .main-container {
         width: 100%;
         height: 100vh;
         background: url(/Images/Hogwarts.jpg);
         background-size: cover;
         background-position: center;
+        overflow-x: hidden;
+    }
+
+    .houses-container {
+        position: relative;
+        top: 30%;
+        left: 25%;
+        display: flex;
     }
     
+    .houses-container div {
+        padding: 30px;
+    }
+
+    .gryffindor-img {
+        height: 300px;
+        border: 2px solid;
+        padding: 5px;
+    }
+
+    .hufflepuff-img {
+        height: 300px;
+        border: 2px solid;
+        padding: 5px;
+    }
+
+    .ravenclaw-img {
+        height: 300px;
+        border: 2px solid;
+        padding: 5px;
+    }
+
+    .slytherin-img {
+        height: 300px;
+        border: 2px solid;
+        padding: 5px;
+    }
+
 }
