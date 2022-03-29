@@ -1,37 +1,37 @@
-let characterArray = []
+let studentArray = []
 
-async function getcharacters(url) {
-  const character = await fetch(url)
-  const jsondata = await character.json()
-  jsondata.forEach(character => {
-    characterArray.push(character)
+async function getStudents(url) {
+  const student = await fetch(url)
+  const jsondata = await student.json()
+  jsondata.forEach(student => {
+    studentArray.push(student)
 })
 }
 
-function listcharacters(){
-  const character = document.getElementById("name")
-  for(let i = 0; i < characterArray.length; i++){
-    if(characterArray[i].alive == false){
-    character.innerHTML += 
+function listStudents(){
+  const student = document.getElementById("name")
+  for(let i = 0; i < studentArray.length; i++){
+    if(studentArray[i].alive == false){
+    student.innerHTML += 
     `<div class="card">
-    <img class="pfp" src="${characterArray[i].image}"</img>
+    <img class="pfp" src="${studentArray[i].image}"</img>
       <div class="container">
-        <h1>${characterArray[i].name}</h1>
-        <h1>${characterArray[i].house}</h1>
-        <h1>${characterArray[i].yearOfBirth}</h1>
+        <h1>${studentArray[i].name}</h1>
+        <h1>${studentArray[i].house}</h1>
+        <h1>${studentArray[i].yearOfBirth}</h1>
         <h3>Dead</h3>
       </div>
     </div>`
   }
   else {
-    character.innerHTML += 
+    student.innerHTML += 
     `<li id="${i}"> 
     <div class="card">
-    <img class="pfp" src="${characterArray[i].image}"</img>
+    <img class="pfp" src="${studentArray[i].image}"</img>
       <div class="container">
-        <h1>${characterArray[i].name}</h1>
-        <h1>${characterArray[i].house}</h1>
-        <h1>${characterArray[i].yearOfBirth}</h1>
+        <h1>${studentArray[i].name}</h1>
+        <h1>${studentArray[i].house}</h1>
+        <h1>${studentArray[i].yearOfBirth}</h1>
         <h2>Alive</h2>
       </div>
     </div>`
@@ -42,9 +42,8 @@ function listcharacters(){
 
 }
 
-getcharacters("http://hp-api.herokuapp.com/api/characters").then(() => {
-  listcharacters()
+getStudents("http://hp-api.herokuapp.com/api/characters/students").then(() => {
+  listStudents()
 });
 
 
-console.log(characterArray)
