@@ -1,23 +1,24 @@
-const api_url = "http://hp-api.herokuapp.com/api/characters";
+let namesArray = []
 
-async function getApi(url) {
-  const response = await fetch(url);
-
-  var data = await response.json();
-  console.log(data);
-  if (response) {
-    
-  }
-  
+async function getNames(url) {
+  const name = await fetch(url)
+  const jsondata = await name.json()
+  jsondata.forEach(name => {
+    namesArray.push(name)
+})
 }
-
-getApi(api_url);
 
 function listNames(){
-  const names = document.getElementsByClassName("name")
-  for(let i = 0; i < getApi.lenght; i++){
-    names.innerHTML += `"<li id="${i}">  </li>"`
+  const name = document.getElementById("name")
+  for(let i = 0; i < namesArray.length; i++){
+    name.innerHTML += `<li id="${i}"> <h3>${namesArray[i].name}</h3></li>`
   }
+
 }
 
-listNames()
+getNames("http://hp-api.herokuapp.com/api/characters").then(() => {
+  listNames()
+});
+
+
+console.log(namesArray)
