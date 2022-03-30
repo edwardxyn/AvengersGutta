@@ -16,23 +16,43 @@ function listStudents(){
     `<div class="card">
     <img class="pfp" src="${studentArray[i].image}"</img>
       <div class="container">
-        <h1>${studentArray[i].name}</h1>
-        <h1>${studentArray[i].house}</h1>
-        <h1>${studentArray[i].yearOfBirth}</h1>
-        <h3>Dead</h3>
+      <ul>
+      <li><h2>Name:${studentArray[i].name}</h2></li>
+      <li><h2>House:${studentArray[i].house}</h2></li>
+      <li><h2>Age:${studentArray[i].yearOfBirth}</h2></li>
+      <li><h3>Dead</h3></li>
+        </ul>
       </div>
     </div>`
   }
-  else {
+  
+  else if (studentArray[i].yearOfBirth == "") {
     student.innerHTML += 
-    `<li id="${i}"> 
-    <div class="card">
+    `<div class="card">
     <img class="pfp" src="${studentArray[i].image}"</img>
       <div class="container">
-        <h1>${studentArray[i].name}</h1>
-        <h1>${studentArray[i].house}</h1>
-        <h1>${studentArray[i].yearOfBirth}</h1>
-        <h2>Alive</h2>
+        <ul>
+        <li><h2>Name:${studentArray[i].name}</h2></li>
+        <li><h2>House:${studentArray[i].house}</h2></li>
+        <li><h2>Age:Unknown</h2></li>
+        <li><h4>Alive</h4></li>
+        </ul>
+      </div>
+    </div>`
+  
+  } 
+
+  else {
+        student.innerHTML += 
+    `<div class="card">
+    <img class="pfp" src="${studentArray[i].image}"</img>
+      <div class="container">
+        <ul>
+        <li><h2>Name:${studentArray[i].name}</h2></li>
+        <li><h2>House:${studentArray[i].house}</h2></li>
+        <li><h2>Age:${studentArray[i].yearOfBirth}</h2></li>
+        <li><h4>Alive</h4></li>
+        </ul>
       </div>
     </div>`
   }
