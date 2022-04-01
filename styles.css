@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
- api
+    text-decoration: none;
 }
 
 main {
@@ -60,11 +60,7 @@ main {
       background-image: url(/AvengersGutta/Images/Untitled.png);
   }
 
-  
-
-    text-decoration: none;
-}
-
+ 
 body {
     font-family: sans-serif;
       background-color: white;
@@ -201,4 +197,3 @@ body {
       }
 
 }
- main
