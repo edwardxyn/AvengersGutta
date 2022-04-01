@@ -1,6 +1,67 @@
 * {
     padding: 0;
     margin: 0;
+ api
+}
+
+main {
+
+    display: flex;
+}
+
+.card {
+    max-width: 165px;
+    height: 420px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 15px;
+    margin: 15px;
+  }
+  
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  
+  .container-pfp {
+    padding: 2px 16px;
+  }
+
+ 
+
+  h1 {
+      font-size: 22px;
+      padding-bottom: 5px;
+      font-weight: lighter;
+  }
+
+  h2 {
+      font-size: 20px;
+      padding-bottom: 5px;
+      font-weight: lighter;
+  }
+
+  h3 {
+      color: red;
+      font-size: 16px;
+      font-weight: lighter;
+  }
+
+  .container {
+      display: flex;
+      float: left;
+      flex-wrap: wrap;
+  }
+
+  .pfp {
+      width: 163px;
+      height: 227px;
+      background-image: url(/AvengersGutta/Images/Untitled.png);
+  }
+
+  
+
     text-decoration: none;
 }
 
@@ -140,3 +201,4 @@ body {
       }
 
 }
+ main
