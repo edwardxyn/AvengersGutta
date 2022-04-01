@@ -1,84 +1,84 @@
-let studentArray = [];
+let characterArray = [];
 
-async function getStudents(url) {
-  const student = await fetch(url);
-  const jsondata = await student.json();
-  jsondata.forEach((student) => {
-    studentArray.push(student);
+async function getcharacters(url) {
+  const character = await fetch(url);
+  const jsondata = await character.json();
+  jsondata.forEach((character) => {
+    characterArray.push(character);
   });
 }
 
-function listStudents() {
-  const student = document.getElementById("name");
-  for (let i = 0; i < studentArray.length; i++) {
-    if ((studentArray[i].alive == false) && (studentArray[i].yearOfBirth == "") && (studentArray[i].house == "") ) {
-      student.innerHTML += `<div class="card">
-    <img class="pfp" src="${studentArray[i].image}"</img>
+function listCharacters() {
+  const character = document.getElementById("name");
+  for (let i = 0; i < characterArray.length; i++) {
+    if ((characterArray[i].alive == false) && (characterArray[i].yearOfBirth == "") && (characterArray[i].house == "") ) {
+      character.innerHTML += `<div class="card">
+    <img class="pfp" src="${characterArray[i].image}"</img>
       <div class="container">
       <ul>
-      <li><h2>Name:${studentArray[i].name}</h2></li>
+      <li><h2>Name:${characterArray[i].name}</h2></li>
       <li><h2>House:Missing</h2></li>
       <li><h2>Age:Unknown</h2></li>
       <li><h3>Dead</h3></li>
         </ul>
       </div>
     </div>`;
-    } else if ((studentArray[i].alive == false) && (studentArray[i].yearOfBirth == "")) {
-      student.innerHTML += `<div class="card">
-    <img class="pfp" src="${studentArray[i].image}"</img>
+    } else if ((characterArray[i].alive == false) && (characterArray[i].yearOfBirth == "")) {
+      character.innerHTML += `<div class="card">
+    <img class="pfp" src="${characterArray[i].image}"</img>
       <div class="container">
         <ul>
-        <li><h2>Name:${studentArray[i].name}</h2></li>
-        <li><h2>House:${studentArray[i].house}</h2></li>
+        <li><h2>Name:${characterArray[i].name}</h2></li>
+        <li><h2>House:${characterArray[i].house}</h2></li>
         <li><h2>Age:Unknown</h2></li>
         <li><h3>Dead</h3></li>
         </ul>
       </div>
     </div>`;
-    }else if ((studentArray[i].alive == false)) {
-      student.innerHTML += `<div class="card">
-    <img class="pfp" src="${studentArray[i].image}"</img>
+    }else if ((characterArray[i].alive == false)) {
+      character.innerHTML += `<div class="card">
+    <img class="pfp" src="${characterArray[i].image}"</img>
       <div class="container">
         <ul>
-        <li><h2>Name:${studentArray[i].name}</h2></li>
-        <li><h2>House:${studentArray[i].house}</h2></li>
-        <li><h2>Age:${studentArray[i].yearOfBirth}</h2></li>
+        <li><h2>Name:${characterArray[i].name}</h2></li>
+        <li><h2>House:${characterArray[i].house}</h2></li>
+        <li><h2>Age:${characterArray[i].yearOfBirth}</h2></li>
         <li><h3>Dead</h3></li>
         </ul>
       </div>
     </div>`;
-    } else if ((studentArray[i].yearOfBirth == "") && (studentArray[i].house == "")) {
-      student.innerHTML += `<div class="card">
-    <img class="pfp" src="${studentArray[i].image}"</img>
+    } else if ((characterArray[i].yearOfBirth == "") && (characterArray[i].house == "")) {
+      character.innerHTML += `<div class="card">
+    <img class="pfp" src="${characterArray[i].image}"</img>
       <div class="container">
         <ul>
-        <li><h2>Name:${studentArray[i].name}</h2></li>
+        <li><h2>Name:${characterArray[i].name}</h2></li>
         <li><h2>House:Missing</h2></li>
         <li><h2>Age:Unknown</h2></li>
         <li><h4>Alive</h4></li>
         </ul>
       </div>
     </div>`;
-    }else if (studentArray[i].yearOfBirth == "") {
-      student.innerHTML += `<div class="card">
-    <img class="pfp" src="${studentArray[i].image}"</img>
+    }else if (characterArray[i].yearOfBirth == "") {
+      character.innerHTML += `<div class="card">
+    <img class="pfp" src="${characterArray[i].image}"</img>
       <div class="container">
         <ul>
-        <li><h2>Name:${studentArray[i].name}</h2></li>
-        <li><h2>House:${studentArray[i].house}</h2></li>
+        <li><h2>Name:${characterArray[i].name}</h2></li>
+        <li><h2>House:${characterArray[i].house}</h2></li>
         <li><h2>Age:Unknown</h2></li>
         <li><h4>Alive</h4></li>
         </ul>
       </div>
     </div>`;
     } else {
-      student.innerHTML += `<div class="card">
-    <img class="pfp" src="${studentArray[i].image}"</img>
+      character.innerHTML += `<div class="card">
+    <img class="pfp" src="${characterArray[i].image}"</img>
       <div class="container">
         <ul>
-        <li><h2>Name:${studentArray[i].name}</h2></li>
-        <li><h2>House:${studentArray[i].house}</h2></li>
-        <li><h2>Age:${studentArray[i].yearOfBirth}</h2></li>
+        <li><h2>Name:${characterArray[i].name}</h2></li>
+        <li><h2>House:${characterArray[i].house}</h2></li>
+        <li><h2>Age:${characterArray[i].yearOfBirth}</h2></li>
         <li><h4>Alive</h4></li>
         </ul>
       </div>
@@ -87,6 +87,6 @@ function listStudents() {
   }
 }
 
-getStudents("http://hp-api.herokuapp.com/api/characters/students").then(() => {
-  listStudents();
+getcharacters("http://hp-api.herokuapp.com/api/characters").then(() => {
+  listCharacters();
 });
