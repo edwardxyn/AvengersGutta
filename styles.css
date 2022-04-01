@@ -27,9 +27,7 @@ main {
     padding: 2px 16px;
   }
 
-  .pfp {
-      max-width: 163px;
-  }
+ 
 
   h1 {
       font-size: 22px;
@@ -59,7 +57,7 @@ main {
       list-style-type: none;
   }
 
-  img {
+  .pfp {
       width: 163px;
       height: 227px;
       background-image: url(/AvengersGutta/Images/Untitled.png);
