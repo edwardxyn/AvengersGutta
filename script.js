@@ -1,92 +1,187 @@
-let characterArray = [];
-
-async function getcharacters(url) {
-  const character = await fetch(url);
-  const jsondata = await character.json();
-  jsondata.forEach((character) => {
-    characterArray.push(character);
-  });
-}
-
-function listCharacters() {
-  const character = document.getElementById("name");
-  for (let i = 0; i < characterArray.length; i++) {
-    if ((characterArray[i].alive == false) && (characterArray[i].yearOfBirth == "") && (characterArray[i].house == "") ) {
-      character.innerHTML += `<div class="card">
-    <img class="pfp" src="${characterArray[i].image}"</img>
-      <div class="container">
-      <ul>
-      <li><h2>Name:${characterArray[i].name}</h2></li>
-      <li><h2>House:Missing</h2></li>
-      <li><h2>Age:Unknown</h2></li>
-      <li><h3>Dead</h3></li>
-        </ul>
-      </div>
-    </div>`;
-    } else if ((characterArray[i].alive == false) && (characterArray[i].yearOfBirth == "")) {
-      character.innerHTML += `<div class="card">
-    <img class="pfp" src="${characterArray[i].image}"</img>
-      <div class="container">
-        <ul>
-        <li><h2>Name:${characterArray[i].name}</h2></li>
-        <li><h2>House:${characterArray[i].house}</h2></li>
-        <li><h2>Age:Unknown</h2></li>
-        <li><h3>Dead</h3></li>
-        </ul>
-      </div>
-    </div>`;
-    }else if ((characterArray[i].alive == false)) {
-      character.innerHTML += `<div class="card">
-    <img class="pfp" src="${characterArray[i].image}"</img>
-      <div class="container">
-        <ul>
-        <li><h2>Name:${characterArray[i].name}</h2></li>
-        <li><h2>House:${characterArray[i].house}</h2></li>
-        <li><h2>Age:${characterArray[i].yearOfBirth}</h2></li>
-        <li><h3>Dead</h3></li>
-        </ul>
-      </div>
-    </div>`;
-    } else if ((characterArray[i].yearOfBirth == "") && (characterArray[i].house == "")) {
-      character.innerHTML += `<div class="card">
-    <img class="pfp" src="${characterArray[i].image}"</img>
-      <div class="container">
-        <ul>
-        <li><h2>Name:${characterArray[i].name}</h2></li>
-        <li><h2>House:Missing</h2></li>
-        <li><h2>Age:Unknown</h2></li>
-        <li><h4>Alive</h4></li>
-        </ul>
-      </div>
-    </div>`;
-    }else if (characterArray[i].yearOfBirth == "") {
-      character.innerHTML += `<div class="card">
-    <img class="pfp" src="${characterArray[i].image}"</img>
-      <div class="container">
-        <ul>
-        <li><h2>Name:${characterArray[i].name}</h2></li>
-        <li><h2>House:${characterArray[i].house}</h2></li>
-        <li><h2>Age:Unknown</h2></li>
-        <li><h4>Alive</h4></li>
-        </ul>
-      </div>
-    </div>`;
-    } else {
-      character.innerHTML += `<div class="card">
-    <img class="pfp" src="${characterArray[i].image}"</img>
-      <div class="container">
-        <ul>
-        <li><h2>Name:${characterArray[i].name}</h2></li>
-        <li><h2>House:${characterArray[i].house}</h2></li>
-        <li><h2>Age:${characterArray[i].yearOfBirth}</h2></li>
-        <li><h4>Alive</h4></li>
-        </ul>
-      </div>
-    </div>`;
-    }
+async function getStudents() {
+  let url = 'http://hp-api.herokuapp.com/api/characters';
+  try {
+      let res = await fetch(url);
+      return await res.json();
+  } catch (error) {
+      console.log(error);
   }
 }
 
-getcharacters("http://hp-api.herokuapp.com/api/characters").then(() => {
-  listCharacters();
-});
+
+
+
+async function filterHouses() {
+  let users = await getStudents();
+  const result = users.filter(user => user.house === "Gryffindor" )
+  console.log(result)
+}
+
+filterHouses();
+potionClass();
+renderTeachers()
+
+
+
+
+
+async function renderUsersG() {
+  let users = await getStudents();
+  let html = '';
+  users.forEach(user => {
+    if((user.house === "Gryffindor") && (user.hogwartsStudent === true)){
+      let htmlSegment = `<div class="Gborder">
+      <div class="card">
+      <img class="pfp" src="${user.image}"</img>
+        <div class="container">
+        <ul>
+        <li><h2>Name:${user.name}</h2></li>
+        <li><h2>House:${user.house}</h2></li>
+        <li><h2>Age:${user.yearOfBirth - "2020"}</h2></li>
+        <li><h2>${user.alive}</h2></li>
+          </ul>
+        </div>
+      </div>
+      </div>`;
+
+      html += htmlSegment;
+    
+    } 
+  });
+
+  let container = document.querySelector('.container');
+  container.innerHTML = html;
+}
+
+async function renderUsersS() {
+  let users = await getStudents();
+  let html = '';
+  users.forEach(user => {
+    if((user.house === "Slytherin") && (user.hogwartsStudent === true)){
+      let htmlSegment = `<div class="Sborder">
+      <div class="card">
+      <img class="pfp" src="${user.image}"</img>
+        <div class="container">
+        <ul>
+        <li><h2>Name:${user.name}</h2></li>
+        <li><h2>House:${user.house}</h2></li>
+        <li><h2>Age:${user.yearOfBirth - "2020"}</h2></li>
+        <li><h2>${user.alive}</h2></li>
+          </ul>
+        </div>
+      </div>
+      </div>`;
+
+      html += htmlSegment;
+    } 
+  });
+
+  let container = document.querySelector('.container');
+  container.innerHTML = html;
+}
+async function renderUsersR() {
+  let users = await getStudents();
+  let html = '';
+  users.forEach(user => {
+    if((user.house === "Ravenclaw") && (user.hogwartsStudent === true)){
+      let htmlSegment = `<div class="Rborder">
+      <div class="card">
+      <img class="pfp" src="${user.image}"</img>
+        <div class="container">
+        <ul>
+        <li><h2>Name:${user.name}</h2></li>
+        <li><h2>House:${user.house}</h2></li>
+        <li><h2>Age:${user.yearOfBirth} - "2020"</h2></li>
+        <li><h2>${user.alive}</h2></li>
+          </ul>
+        </div>
+      </div>
+      </div>`;
+
+      html += htmlSegment;
+    } 
+  });
+
+  let container = document.querySelector('.container');
+  container.innerHTML = html;
+}
+async function renderUsersH() {
+  let users = await getStudents();
+  let html = '';
+  users.forEach(user => {
+    if((user.house === "Hufflepuff") && (user.hogwartsStudent === true)){
+      let htmlSegment = `<div class="Hborder">
+      <div class="card">
+      <img class="pfp" src="${user.image}"</img>
+        <div class="container">
+        <ul>
+        <li><h2>Name:${user.name}</h2></li>
+        <li><h2>House:${user.house}</h2></li>
+        <li><h2>Age:${user.yearOfBirth} - "2020"</h2></li>
+        <li><h2>${user.alive}</h2></li>
+          </ul>
+        </div>
+      </div>
+      </div>`;
+
+      html += htmlSegment;
+    } 
+  });
+
+  let container = document.querySelector('.container');
+  container.innerHTML = html;
+}
+
+async function potionClass() {
+  let users = await getStudents();
+  let html = '';
+  users.forEach(user => {
+    if((user.name === "Severus Snape")){
+      let htmlSegment = `<div class="Hborder">
+      <div class="card">
+      <img class="pfp" src="${user.image}"</img>
+        <div class="container">
+        <ul>
+        <li><h2>Name:${user.name}</h2></li>
+        <li><h2>House:${user.house}</h2></li>
+        <li><h2>Age:${user.yearOfBirth} - "2020"</h2></li>
+        <li><h2>${user.alive}</h2></li>
+          </ul>
+        </div>
+      </div>
+      </div>`;
+
+      html += htmlSegment;
+    } 
+  });
+
+  let container = document.querySelector('.container-Potion');
+  container.innerHTML = html;
+}
+
+async function renderTeachers() {
+  let users = await getStudents();
+  let html = '';
+  users.forEach(user => {
+    if((user.hogwartsStudent === false)){
+      let htmlSegment = `<div class="Gborder">
+      <div class="card">
+      <img class="pfp" src="${user.image}"</img>
+        <div class="container">
+        <ul>
+        <li><h2>Name:${user.name}</h2></li>
+        <li><h2>House:${user.house}</h2></li>
+        <li><h2>Age:${user.yearOfBirth - "2020"}</h2></li>
+        <li><h2>${user.alive}</h2></li>
+          </ul>
+        </div>
+      </div>
+      </div>`;
+
+      html += htmlSegment;
+    
+    } 
+  });
+  let container = document.querySelector('.container-Teachers');
+  container.innerHTML = html;
+}

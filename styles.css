@@ -16,6 +16,7 @@ main {
     transition: 0.3s;
     padding: 15px;
     margin: 15px;
+    
   }
   
   
@@ -28,7 +29,9 @@ main {
     padding: 2px 16px;
   }
 
- 
+  li {
+    list-style-type: none;
+  }  
 
   h1 {
       font-size: 22px;
@@ -40,6 +43,7 @@ main {
       font-size: 20px;
       padding-bottom: 5px;
       font-weight: lighter;
+      margin-left: 10px;
   }
 
   h3 {
@@ -54,10 +58,16 @@ main {
       flex-wrap: wrap;
   }
 
+  .container-Teachers {
+    display: flex;
+    float: left;
+    flex-wrap: wrap;
+}
+
   .pfp {
       width: 163px;
       height: 227px;
-      background-image: url(/AvengersGutta/Images/Untitled.png);
+      background-image: url(Images/Untitled.png);
   }
 
  
@@ -78,6 +88,7 @@ body {
     display: block;
     line-height: 80px;
     margin: 0 10px;
+
   }
   
   /* Padding og border-radius for hover effekt */
@@ -125,7 +136,7 @@ body {
     .main-container {
         width: 100%;
         height: 100vh;
-        background: url(/Images/Hogwarts.jpg);
+        background: url(Images/Hogwarts.jpg);
         background-size: cover;
         background-position: center;
         overflow-x: hidden;
@@ -197,3 +208,6 @@ body {
       }
 
 }
+
+
+
