@@ -58,10 +58,20 @@ main {
       flex-wrap: wrap;
   }
 
+  .container-Potion {
+    display: flex;
+    float: left;
+    flex-wrap: wrap;
+    margin-top: 250px;
+    margin-left: 125px;
+  }
+
   .container-Teachers {
     display: flex;
     float: left;
     flex-wrap: wrap;
+    margin-top: 250px;
+    margin-left: 125px;
 }
 
   .pfp {
@@ -69,6 +79,7 @@ main {
       height: 227px;
       background-image: url(Images/Untitled.png);
   }
+
 
  
 body {

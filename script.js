@@ -139,14 +139,12 @@ async function potionClass() {
     if((user.name === "Severus Snape")){
       let htmlSegment = `<div class="Hborder">
       <div class="card">
-      <img class="pfp" src="${user.image}"</img>
-        <div class="container">
-        <ul>
-        <li><h2>Name:${user.name}</h2></li>
-        <li><h2>House:${user.house}</h2></li>
-        <li><h2>Age:${user.yearOfBirth} - "2020"</h2></li>
-        <li><h2>${user.alive}</h2></li>
+      <img class="pfp" src="${user.image}" onclick="startClass()"></img>
+      <ul>
+        <li><h2>${user.name}</h2></li>
           </ul>
+        <div class="container">
+        
         </div>
       </div>
       </div>`;
@@ -185,3 +183,5 @@ async function renderTeachers() {
   let container = document.querySelector('.container-Teachers');
   container.innerHTML = html;
 }
+
+
