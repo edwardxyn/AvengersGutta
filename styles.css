@@ -9,6 +9,8 @@ main {
     display: flex;
 }
 
+
+
 .card {
     max-width: 165px;
     height: 420px;
@@ -48,8 +50,10 @@ main {
 
   h3 {
       color: red;
-      font-size: 16px;
+      font-size: 20px;
+      padding-bottom: 5px;
       font-weight: lighter;
+      margin-left: 10px;
   }
 
   .container {
@@ -58,20 +62,10 @@ main {
       flex-wrap: wrap;
   }
 
-  .container-Potion {
-    display: flex;
-    float: left;
-    flex-wrap: wrap;
-    margin-top: 250px;
-    margin-left: 125px;
-  }
-
   .container-Teachers {
     display: flex;
     float: left;
     flex-wrap: wrap;
-    margin-top: 250px;
-    margin-left: 125px;
 }
 
   .pfp {
@@ -79,7 +73,6 @@ main {
       height: 227px;
       background-image: url(Images/Untitled.png);
   }
-
 
  
 body {
