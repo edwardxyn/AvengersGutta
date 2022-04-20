@@ -107,9 +107,9 @@ var staff = document.getElementById("charecter");
 charecterArray = [];
 
 function addCharecter() {
-  let nameInput = document.getElementById("name");
-  let houseInput = document.getElementById("house");
-  let patronusInput = document.getElementById("patronus");
+  let nameInput = document.getElementById("name").value;
+  let houseInput = document.getElementById("house").value;
+  let patronusInput = document.getElementById("patronus").value;
 
   charecterArray.push({
     name: nameInput,
