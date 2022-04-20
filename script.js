@@ -138,15 +138,15 @@ function charecters() {
   charecter.innerHTML = "";
   for (let i = 0; i < charecterArray.length; i++)
     charecter.innerHTML += `<li>
-        <p>${charecterArray[i].name}</p>
+        <p contenteditable="true">${charecterArray[i].name}</p>
       </li>`;
   for (let i = 0; i < charecterArray.length; i++)
     charecter.innerHTML += `<li>
-        <p>${charecterArray[i].house}</p>
+        <p contenteditable="true">${charecterArray[i].house}</p>
       </li>`;
   for (let i = 0; i < charecterArray.length; i++)
     charecter.innerHTML += `<li>
-        <p>${charecterArray[i].patronus}</p><button class = "delete-button" id="delete" onclick="deleteCharecter(${i})">Delete</button>
+        <p contenteditable="true">${charecterArray[i].patronus}</p><button class = "delete-button" id="delete" onclick="deleteCharecter(${i})">Delete</button>
       </li>`;
 }
 
