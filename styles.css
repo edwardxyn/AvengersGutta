@@ -5,10 +5,14 @@
 }
 
 main {
-
+  background-color: rgba(0, 0, 0, 0.938);
     display: flex;
 }
 
+footer {
+  background-color: rgba(0, 0, 0, 0.938);
+  display: flex;
+}
 
 
 .card {
@@ -24,8 +28,21 @@ main {
   
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    
   }
   
+  .teacher-card {
+    max-width: 165px;
+    height: 420px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 15px;
+    margin: 15px;
+    
+  }
+ 
+  
+ 
   
   .container-pfp {
     padding: 2px 16px;
@@ -39,6 +56,7 @@ main {
       font-size: 22px;
       padding-bottom: 5px;
       font-weight: lighter;
+      color: white;
   }
 
   h2 {
@@ -46,6 +64,7 @@ main {
       padding-bottom: 5px;
       font-weight: lighter;
       margin-left: 10px;
+      color: white;
   }
 
   h3 {
@@ -54,6 +73,7 @@ main {
       padding-bottom: 5px;
       font-weight: lighter;
       margin-left: 10px;
+      
   }
 
   .container {
@@ -66,6 +86,7 @@ main {
     display: flex;
     float: left;
     flex-wrap: wrap;
+    margin-top: 150px;
 }
 
   .pfp {
@@ -74,6 +95,7 @@ main {
       background-image: url(Images/Untitled.png);
   }
 
+ 
  
 body {
     font-family: sans-serif;
@@ -213,5 +235,52 @@ body {
 
 }
 
+input {
+  margin-top: 45px;
+  width: auto;
+  height: 25px;
+  border: 15px rgb(77, 123, 192);
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.container-Potion {
+  margin-top: 150px;
+  height: 1800px;
+}
+
+.teacher-Info {
+  background-color: rgba(36, 35, 35, 0.603);
+  width: 150px;
+  font-size: 16px;
+  margin: 5px;
+  border-radius: 8px;
+  border-color: rgb(77, 77, 77);
+  color: white;
+  padding: 5px;
+}
 
 
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  text-transform: capitalize;
+}

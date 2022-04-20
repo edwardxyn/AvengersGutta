@@ -46,7 +46,7 @@ async function renderUsersG() {
         <ul>
         <li><h2>Name:${user.name}</h2></li>
         <li><h2>House:${user.house}</h2></li>
-        <li><h2>Age:${user.yearOfBirth - "2020"}</h2></li>
+        <li><h2>Age:${ "2020" - user.yearOfBirth}</h2></li>
         <li><h2>Alive</h2></li>
           </ul>
         </div>
@@ -103,7 +103,7 @@ async function renderUsersS() {
         <ul>
         <li><h2>Name:${user.name}</h2></li>
         <li><h2>House:${user.house}</h2></li>
-        <li><h2>Age:${user.yearOfBirth - "2020"}</h2></li>
+        <li><h2>Age:${"2020" - user.yearOfBirth}</h2></li>
         <li><h2>Alive</h2></li>
           </ul>
         </div>
@@ -158,7 +158,7 @@ async function renderUsersR() {
         <ul>
         <li><h2>Name:${user.name}</h2></li>
         <li><h2>House:${user.house}</h2></li>
-        <li><h2>Age:${user.yearOfBirth - "2020"}</h2></li>
+        <li><h2>Age:${"2020" - user.yearOfBirth}</h2></li>
         <li><h2>Alive</h2></li>
           </ul>
         </div>
@@ -214,7 +214,7 @@ async function renderUsersH() {
         <ul>
         <li><h2 class="student">Name:${user.name}</h2></li>
         <li><h2>House:${user.house}</h2></li>
-        <li><h2>Age:${user.yearOfBirth- "2020"} </h2></li>
+        <li><h2>Age:${"2020" - user.yearOfBirth} </h2></li>
         <li><h2>Alive</h2></li>
           </ul>
         </div>
@@ -272,7 +272,7 @@ async function potionClass() {
         <ul>
         <li><h2>Name:${user.name}</h2></li>
         <li><h2>House:${user.house}</h2></li>
-        <li><h2>Age:${user.yearOfBirth- "2020"} </h2></li>
+        <li><h2>Age:${"2020" - user.yearOfBirth} </h2></li>
         <li><h2>Alive</h2></li>
           </ul>
         </div>
@@ -287,32 +287,102 @@ async function potionClass() {
   container.innerHTML = html;
 }
 
-async function renderTeachers() {
+/**async function renderTeachers() {
   let users = await getStudents();
   let html = '';
   users.forEach(user => {
-    if((user.hogwartsStudent === false)){
+    if((user.hogwartsStudent === false) && (user.patronus)){
       let htmlSegment = `<div class="Gborder">
-      <div class="card" id="${user.name}">
-      <img class="pfp" src="${user.image}"</img>
+      <div class="teacher-card tooltip" id="${user.name}">
+      <img class="pfp" src="${user.image}"></img>
+      <span class="tooltiptext">${user.patronus}</span>
         <div class="container">
         <ul>
-        <li><h2>Name:${user.name}</h2></li>
-        <li><h2>House:${user.house}</h2></li>
-        <li><h2>Age:${user.yearOfBirth - "2020"}</h2></li>
-        <li><h2>Alive</h2></li>
-          </ul>
+        <li><input class="teacher-Info" placeholder="${user.name}"></li>
+        <li><input class="teacher-Info" placeholder="${user.house}"></li>
         </div>
       </div>
       </div>`;
 
       html += htmlSegment;
     
-    } 
+    } else if (user.hogwartsStudent === false){
+      let htmlSegment = `<div class="Gborder">
+      <div class="teacher-card " id="${user.name}">
+      <img class="pfp" src="${user.image}"></img>
+        <div class="container">
+        <ul>
+        <li><input class="teacher-Info" placeholder="${user.name}"></li>
+        <li><input class="teacher-Info" placeholder="${user.house}"></li>
+        </div>
+      </div>
+      </div>`;
+
+      html += htmlSegment;
+    
+    }
   });
   let container = document.querySelector('.container-Teachers');
   container.innerHTML = html;
 }
+*/
+
+async function renderTeachers() {
+  let users = await getStudents();
+  let html = '';
+  users.forEach(user => {
+    if((user.hogwartsStudent === false) && (user.patronus)){
+      let htmlSegment = `<div class="Gborder">
+      <div class="teacher-card tooltip" id="${user.name}">
+      <img class="pfp" src="${user.image}"></img>
+      <span class="tooltiptext">${user.patronus}</span>
+        <div class="container">
+        <ul>
+        <li><h2 contenteditable="true">${user.name}</h2></li>
+        <li><h2 contenteditable="true">${user.house}</h2></li>
+        </div>
+      </div>
+      </div>`;
+
+      html += htmlSegment;
+    
+    } else if (user.hogwartsStudent === false){
+      let htmlSegment = `<div class="Gborder">
+      <div class="teacher-card " id="${user.name}">
+      <img class="pfp" src="${user.image}"></img>
+        <div class="container">
+        <ul>
+        <li><h2 contenteditable="true">${user.name}</h2></li>
+        <li><h2 contenteditable="true">${user.house}</h2></li>
+        </div>
+      </div>
+      </div>`;
+
+      html += htmlSegment;
+    
+    }
+  });
+  let container = document.querySelector('.container-Teachers');
+  container.innerHTML = html;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function search_student() {
