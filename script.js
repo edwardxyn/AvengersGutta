@@ -11,7 +11,11 @@ async function getStudents(url) {
 function listStudents() {
   const student = document.getElementById("name");
   for (let i = 0; i < studentArray.length; i++) {
-    if ((studentArray[i].alive == false) && (studentArray[i].yearOfBirth == "") && (studentArray[i].house == "") ) {
+    if (
+      studentArray[i].alive == false &&
+      studentArray[i].yearOfBirth == "" &&
+      studentArray[i].house == ""
+    ) {
       student.innerHTML += `<div class="card">
     <img class="pfp" src="${studentArray[i].image}"</img>
       <div class="container">
@@ -23,7 +27,10 @@ function listStudents() {
         </ul>
       </div>
     </div>`;
-    } else if ((studentArray[i].alive == false) && (studentArray[i].yearOfBirth == "")) {
+    } else if (
+      studentArray[i].alive == false &&
+      studentArray[i].yearOfBirth == ""
+    ) {
       student.innerHTML += `<div class="card">
     <img class="pfp" src="${studentArray[i].image}"</img>
       <div class="container">
@@ -35,7 +42,7 @@ function listStudents() {
         </ul>
       </div>
     </div>`;
-    }else if ((studentArray[i].alive == false)) {
+    } else if (studentArray[i].alive == false) {
       student.innerHTML += `<div class="card">
     <img class="pfp" src="${studentArray[i].image}"</img>
       <div class="container">
@@ -47,7 +54,10 @@ function listStudents() {
         </ul>
       </div>
     </div>`;
-    } else if ((studentArray[i].yearOfBirth == "") && (studentArray[i].house == "")) {
+    } else if (
+      studentArray[i].yearOfBirth == "" &&
+      studentArray[i].house == ""
+    ) {
       student.innerHTML += `<div class="card">
     <img class="pfp" src="${studentArray[i].image}"</img>
       <div class="container">
@@ -59,7 +69,7 @@ function listStudents() {
         </ul>
       </div>
     </div>`;
-    }else if (studentArray[i].yearOfBirth == "") {
+    } else if (studentArray[i].yearOfBirth == "") {
       student.innerHTML += `<div class="card">
     <img class="pfp" src="${studentArray[i].image}"</img>
       <div class="container">
@@ -90,3 +100,46 @@ function listStudents() {
 getStudents("http://hp-api.herokuapp.com/api/characters/students").then(() => {
   listStudents();
 });
+
+
+var staff = document.getElementById("charecter");
+
+charecterArray = [];
+
+function addCharecter() {
+  let nameInput = document.getElementById("name");
+  let houseInput = document.getElementById("house");
+  let patronusInput = document.getElementById("patronus");
+
+  charecterArray.push({
+    name: nameInput,
+    house: houseInput,
+    patronus: patronusInput,
+  });
+
+  charecters();
+}
+
+function charecters() {
+  charecter.innerHTML = "";
+  for (let i = 0; i < charecterArray.length; i++)
+    charecter.innerHTML += `<li>
+        <p>${charecterArray[i].name}</p>
+      </li>`;
+  for (let i = 0; i < charecterArray.length; i++)
+    charecter.innerHTML += `<li>
+        <p>${charecterArray[i].house}</p>
+      </li>`;
+  for (let i = 0; i < charecterArray.length; i++)
+    charecter.innerHTML += `<li>
+        <p>${charecterArray[i].patronus}</p><button class = "delete-button" id="delete" onclick="deleteCharecter(${i})">Delete</button>
+      </li>`;
+}
+
+function deleteCharecter(i) {
+  if (prompt("Vil du slette karakter? ja/nei") == "ja") {
+    charecterArray.splice(i, 1);
+    charecters();
+  } else if ("nei") {
+  }
+}

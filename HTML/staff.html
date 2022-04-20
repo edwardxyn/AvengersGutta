@@ -10,19 +10,18 @@
     <main>
       <div class="creator-container" id="teacher-creator">
         <h3>Create your own teacher</h3>
-        <input type="text" placeholder="Name" />
-        <input type="text" placeholder="House" />
-        <input type="text" placeholder="Patronus" />
-        <br />
-        <input type="radio" name="gender" value="male" id="male" />
-        <label for="male">Male</label>
+        <ul id="charecter"></ul>
+        <div class="creator-container" id="teacher-creator">
+          <h3>Create your own teacher</h3>
+          <input type="text" placeholder="Name" id="name" />
+          <input type="text" placeholder="House" id="house" />
+          <input type="text" placeholder="Patronus" id="patronus" />
+          <br />
 
-        <input type="radio" name="gender" value="female" id="female" />
-        <label for="female">Female</label>
-
-        <input type="submit" value="submit" />
-        <ul></ul>
+          <button onclick="addCharecter()">Create</button>
+        </div>
       </div>
     </main>
+    <script src="/script.js"></script>
   </body>
 </html>
