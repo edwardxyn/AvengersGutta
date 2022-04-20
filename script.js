@@ -101,7 +101,6 @@ getStudents("http://hp-api.herokuapp.com/api/characters/students").then(() => {
   listStudents();
 });
 
-
 var staff = document.getElementById("charecter");
 
 charecterArray = [];
@@ -110,6 +109,21 @@ function addCharecter() {
   let nameInput = document.getElementById("name").value;
   let houseInput = document.getElementById("house").value;
   let patronusInput = document.getElementById("patronus").value;
+
+  if (document.getElementById("name").value.length == 0) {
+    alert("Fill out name");
+    return false;
+  }
+
+  if (document.getElementById("house").value.length == 0) {
+    alert("Fill out house");
+    return false;
+  }
+
+  if (document.getElementById("patronus").value.length == 0) {
+    alert("Fill out patronus");
+    return false;
+  }
 
   charecterArray.push({
     name: nameInput,
