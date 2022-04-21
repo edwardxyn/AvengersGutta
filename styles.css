@@ -1,12 +1,12 @@
 * {
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
 }
 
 main {
   background-color: rgba(0, 0, 0, 0.938);
-    display: flex;
+  display: flex;
 }
 
 footer {
@@ -14,225 +14,199 @@ footer {
   display: flex;
 }
 
-
 .card {
-    max-width: 165px;
-    height: 420px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    padding: 15px;
-    margin: 15px;
-    
-  }
-  
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    
-  }
-  
-  .teacher-card {
-    max-width: 165px;
-    height: 420px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    padding: 15px;
-    margin: 15px;
-    
-  }
- 
-  
- 
-  
-  .container-pfp {
-    padding: 2px 16px;
-  }
-
-  li {
-    list-style-type: none;
-  }  
-
-  h1 {
-      font-size: 22px;
-      padding-bottom: 5px;
-      font-weight: lighter;
-      color: white;
-  }
-
-  h2 {
-      font-size: 20px;
-      padding-bottom: 5px;
-      font-weight: lighter;
-      margin-left: 10px;
-      color: white;
-  }
-
-  h3 {
-      color: red;
-      font-size: 20px;
-      padding-bottom: 5px;
-      font-weight: lighter;
-      margin-left: 10px;
-      
-  }
-
-  .container {
-      display: flex;
-      float: left;
-      flex-wrap: wrap;
-  }
-
-  .container-Teachers {
-    display: flex;
-    float: left;
-    flex-wrap: wrap;
-    margin-top: 150px;
+  max-width: 165px;
+  height: 420px;
+  box-shadow: 5px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 15px;
+  margin: 15px;
 }
 
-  .pfp {
-      width: 163px;
-      height: 227px;
-      background-image: url(Images/Untitled.png);
-  }
+.container-pfp {
+  padding: 2px 16px;
+}
 
- 
- 
+li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 22px;
+  padding-bottom: 5px;
+  font-weight: lighter;
+  color: white;
+}
+
+h2 {
+  font-size: 20px;
+  padding-bottom: 5px;
+  font-weight: lighter;
+  margin-left: 10px;
+  color: white;
+}
+
+h3 {
+  color: red;
+  font-size: 20px;
+  padding-bottom: 5px;
+  font-weight: lighter;
+  margin-left: 10px;
+}
+
+.container {
+  display: flex;
+  float: left;
+  flex-wrap: wrap;
+}
+
+.container-Teachers {
+  display: flex;
+  float: left;
+  flex-wrap: wrap;
+  margin-top: 150px;
+}
+
+.pfp {
+  width: 163px;
+  height: 227px;
+  background-image: url(Images/Untitled.png);
+}
+
 body {
-    font-family: sans-serif;
-      background-color: white;
-  }
-  
-  header {
-    background: rgba(0, 0, 0, 0.2);
-    position: fixed;
-    width: 100%;
-    overflow: hidden;
-    z-index: 2;
-  }
-  
-  header ul li {
-    display: block;
-    line-height: 80px;
-    margin: 0 10px;
+  font-family: sans-serif;
+  background-color: white;
+}
 
-  }
-  
-  /* Padding og border-radius for hover effekt */
-  header ul li a {
-    color: white;
-    font-size: 17px;
-    padding: 7px 13px;
-    border-radius: 3px;
-    position: relative;
-    top: 20px;
-  }
-  
-  header ul a:hover {
-    background: rgba(0, 0, 0, 0.8);
-    transition: 0.5s;
-  }
-  
-  .harry-potter-logo {
-      height: 120px;
-      width: auto;
-      position: relative;
-      top: 10px;
-  }
-  
-  .header .logo {
-    color: white;
+header {
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+header ul li {
+  display: block;
+  line-height: 80px;
+  margin: 0 10px;
+}
+
+/* Padding og border-radius for hover effekt */
+header ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  position: relative;
+  top: 20px;
+}
+
+header ul a:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transition: 0.5s;
+}
+
+.harry-potter-logo {
+  height: 120px;
+  width: auto;
+  position: relative;
+  top: 10px;
+}
+
+.header .logo {
+  color: white;
+  float: left;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 23px;
+  font-weight: bold;
+}
+
+/* Resposiv navbar */
+@media (min-width: 768px) {
+  header li {
     float: left;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 23px;
-    font-weight: bold;
   }
-  
-  /* Resposiv navbar */
-  @media (min-width: 768px) {
-    header li {
-      float: left;
-    }
-    .header .menu {
-      clear: none;
-      float: right;
-      max-height: none;
-    }
-    
-    .main-container {
-        width: 100%;
-        height: 100vh;
-        background: url(Images/Hogwarts.jpg);
-        background-size: cover;
-        background-position: center;
-        overflow-x: hidden;
-    }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
 
-    .houses-container {
-        position: relative;
-        top: 30%;
-        left: 14%;
-        display: flex;
-    }
-    
-    .houses-container div {
-        padding: 30px;
-    }
+  .main-container {
+    width: 100%;
+    height: 100vh;
+    background: url(Images/Hogwarts.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+  }
 
-    .gryffindor-img {
-        height: 300px;
-        padding: 20px;
-        border-radius: 25px;
-    }
+  .houses-container {
+    position: relative;
+    top: 30%;
+    left: 14%;
+    display: flex;
+  }
 
-    .hufflepuff-img {
-        height: 300px;
-        padding: 20px;
-        border-radius: 25px;
-    }
+  .houses-container div {
+    padding: 30px;
+  }
 
-    .ravenclaw-img {
-        height: 300px;
-        padding: 20px;
-        border-radius: 25px;
-    }
+  .gryffindor-img {
+    height: 300px;
+    padding: 20px;
+    border-radius: 25px;
+  }
 
-    .slytherin-img {
-        height: 300px;
-        padding: 20px;
-        border-radius: 25px;
-    }
+  .hufflepuff-img {
+    height: 300px;
+    padding: 20px;
+    border-radius: 25px;
+  }
 
-     .gryffindor-img:hover {
-        background: rgba(174, 0, 1, .8);
-        transition: ease-in-out .2s;
-    }
-    .hufflepuff-img:hover {
-        background: rgba(240, 199, 94, .8);
-        transition: ease-in-out .2s;
-    }
-    .ravenclaw-img:hover {
-        background: rgba(34, 47, 91, .8);
-        transition: ease-in-out .2s;
-    }
-    .slytherin-img:hover {
-        background: rgba(42, 98, 61, .8);
-        transition: ease-in-out .2s;
-    }
-     
-    .houses-container:hover .houses-box{
-        filter:blur(3px);
-        opacity:.5;
-        transform: scale(.98);
-        box-shadow:none;
-        transition: ease-in-out .2s;
-      }
-      .houses-container:hover .houses-box:hover{
-        transform:scale(1);
-        filter:blur(0px);
-        opacity:1;
-      }
+  .ravenclaw-img {
+    height: 300px;
+    padding: 20px;
+    border-radius: 25px;
+  }
 
+  .slytherin-img {
+    height: 300px;
+    padding: 20px;
+    border-radius: 25px;
+  }
+
+  .gryffindor-img:hover {
+    background: rgba(174, 0, 1, 0.8);
+    transition: ease-in-out 0.2s;
+  }
+  .hufflepuff-img:hover {
+    background: rgba(240, 199, 94, 0.8);
+    transition: ease-in-out 0.2s;
+  }
+  .ravenclaw-img:hover {
+    background: rgba(34, 47, 91, 0.8);
+    transition: ease-in-out 0.2s;
+  }
+  .slytherin-img:hover {
+    background: rgba(42, 98, 61, 0.8);
+    transition: ease-in-out 0.2s;
+  }
+
+  .houses-container:hover .houses-box {
+    filter: blur(3px);
+    opacity: 0.5;
+    transform: scale(0.98);
+    box-shadow: none;
+    transition: ease-in-out 0.2s;
+  }
+  .houses-container:hover .houses-box:hover {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+  }
 }
 
 input {
@@ -260,8 +234,6 @@ input {
   padding: 5px;
 }
 
-
-
 .tooltip {
   position: relative;
   display: inline-block;
@@ -283,4 +255,44 @@ input {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   text-transform: capitalize;
+}
+
+.Gryffindor {
+  background-color: red;
+}
+
+.Slytherin {
+  background-color: green;
+}
+
+.Ravenclaw {
+  background-color: blue;
+}
+
+.Hufflepuff {
+  background-color: yellow;
+}
+
+.Default-house {
+  background-color: gray;
+}
+
+.Gryffindor:hover {
+  box-shadow: 0px 2px 25px 0 rgb(180, 29, 29);
+}
+
+.Slytherin:hover {
+  box-shadow: 0px 2px 25px 0 rgb(12, 226, 23);
+}
+
+.Hufflepuff:hover {
+  box-shadow: 0px 2px 25px 0 rgb(233, 162, 9);
+}
+
+.Ravenclaw:hover {
+  box-shadow: 0px 2px 25px 0 rgb(13, 74, 187);
+}
+
+.Default-house:hover {
+  box-shadow: 0px 2px 25px 0 rgb(88, 88, 88);
 }

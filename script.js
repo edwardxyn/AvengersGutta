@@ -40,7 +40,7 @@ async function renderUsersG() {
   users.forEach(user => {
     if((user.house === "Gryffindor") && (user.hogwartsStudent === true) && (user.alive === true) && (user.yearOfBirth) ){
       let htmlSegment = `<div class="Gborder">
-      <div class="card" id="${user.name}">
+      <div class="card ${user.house}"" id="${user.name}">
       <img class="pfp" src="${user.image}"</img>
         <div class="container">
         <ul>
@@ -57,7 +57,7 @@ async function renderUsersG() {
     
     } else if ((user.house === "Gryffindor") && (user.hogwartsStudent === true) && (user.alive === true)){
       let htmlSegment = `<div class="Gborder">
-      <div class="card" id="${user.name}">
+      <div class="card ${user.house}" id="${user.name}">
       <img class="pfp" src="${user.image}"</img>
         <div class="container">
         <ul>
@@ -72,7 +72,7 @@ async function renderUsersG() {
       html += htmlSegment;
     }else if ((user.house === "Gryffindor") && (user.hogwartsStudent === true) && (user.alive === false)){
       let htmlSegment = `<div class="Gborder">
-      <div class="card" id="${user.name}">
+      <div class="card ${user.house}"" id="${user.name}">
       <img class="pfp" src="${user.image}"</img>
         <div class="container">
         <ul>
@@ -97,7 +97,7 @@ async function renderUsersS() {
   users.forEach(user => {
     if((user.house === "Slytherin") && (user.hogwartsStudent === true) && (user.alive === true) && (user.yearOfBirth) ){
       let htmlSegment = `<div class="Sborder">
-      <div class="card" id="${user.name}">
+      <div class="card ${user.house}"" id="${user.name}">
       <img class="pfp" src="${user.image}"</img>
         <div class="container">
         <ul>
@@ -113,7 +113,7 @@ async function renderUsersS() {
       html += htmlSegment;
     } else if ((user.house === "Slytherin") && (user.hogwartsStudent === true) && (user.alive === true)){
       let htmlSegment = `<div class="Sborder">
-      <div class="card" id="${user.name}">
+      <div class="card ${user.house}"" id="${user.name}">
       <img class="pfp" src="${user.image}"</img>
         <div class="container">
         <ul>
@@ -128,7 +128,7 @@ async function renderUsersS() {
       html += htmlSegment;
     }else if ((user.house === "Slytherin") && (user.hogwartsStudent === true) && (user.alive === false)){
       let htmlSegment = `<div class="Sborder">
-      <div class="card" id="${user.name}">
+      <div class="card ${user.house}"" id="${user.name}">
       <img class="pfp" src="${user.image}"</img>
         <div class="container">
         <ul>
@@ -152,7 +152,7 @@ async function renderUsersR() {
   users.forEach(user => {
     if((user.house === "Ravenclaw") && (user.hogwartsStudent === true) && (user.alive === true) && (user.yearOfBirth) ){
       let htmlSegment = `<div class="Rborder">
-      <div class="card" id="${user.name}">
+      <div class="card ${user.house}"" id="${user.name}">
       <img class="pfp" src="${user.image}"</img>
         <div class="container">
         <ul>
@@ -168,7 +168,7 @@ async function renderUsersR() {
       html += htmlSegment;
     } else if ((user.house === "Ravenclaw") && (user.hogwartsStudent === true) && (user.alive === true)){
       let htmlSegment = `<div class="Rborder">
-      <div class="card" id="${user.name}">
+      <div class="card ${user.house}"" id="${user.name}">
       <img class="pfp" src="${user.image}"</img>
         <div class="container">
         <ul>
@@ -183,7 +183,7 @@ async function renderUsersR() {
       html += htmlSegment;
     }else if ((user.house === "Ravenclaw") && (user.hogwartsStudent === true) && (user.alive === false)){
       let htmlSegment = `<div class="Rborder">
-      <div class="card" id="${user.name}">
+      <div class="card ${user.house}"" id="${user.name}">
       <img class="pfp" src="${user.image}"</img>
         <div class="container">
         <ul>
@@ -208,7 +208,7 @@ async function renderUsersH() {
     if((user.house === "Hufflepuff") && (user.hogwartsStudent === true) && (user.alive === true) && (user.yearOfBirth) ){
       let htmlSegment = `
       <div class="Hborder">
-      <div class="card" id="${user.name}">
+      <div class="card ${user.house}"" id="${user.name}">
       <img class="pfp" src="${user.image}"</img>
         <div class="container">
         <ul>
@@ -225,7 +225,7 @@ async function renderUsersH() {
     } else if ((user.house === "Hufflepuff") && (user.hogwartsStudent === true) && (user.alive === true)){
       let htmlSegment = `
       <div class="Hborder">
-      <div class="card" id="${user.name}">
+      <div class="card ${user.house}"" id="${user.name}">
       <img class="pfp" src="${user.image}"</img>
         <div class="container">
         <ul>
@@ -241,7 +241,7 @@ async function renderUsersH() {
     }else if ((user.house === "Hufflepuff") && (user.hogwartsStudent === true) && (user.alive === false)){
       let htmlSegment = `
       <div class="Hborder">
-      <div class="card" id="${user.name}">
+      <div class="card ${user.house}"" id="${user.name}">
       <img class="pfp" src="${user.image}"</img>
         <div class="container">
         <ul>
@@ -266,7 +266,7 @@ async function potionClass() {
   users.forEach(user => {
     if((user.name === "Severus Snape")){
       let htmlSegment = `<div class="Hborder">
-      <div class="card" id="${user.name}">
+      <div class="card ${user.house}"" id="${user.name}">
       <img class="pfp" src="${user.image}"</img>
         <div class="container">
         <ul>
@@ -293,7 +293,7 @@ async function potionClass() {
   users.forEach(user => {
     if((user.hogwartsStudent === false) && (user.patronus)){
       let htmlSegment = `<div class="Gborder">
-      <div class="teacher-card tooltip" id="${user.name}">
+      <div class="card tooltip" id="${user.name}">
       <img class="pfp" src="${user.image}"></img>
       <span class="tooltiptext">${user.patronus}</span>
         <div class="container">
@@ -308,7 +308,7 @@ async function potionClass() {
     
     } else if (user.hogwartsStudent === false){
       let htmlSegment = `<div class="Gborder">
-      <div class="teacher-card " id="${user.name}">
+      <div class="card " id="${user.name}">
       <img class="pfp" src="${user.image}"></img>
         <div class="container">
         <ul>
@@ -331,9 +331,9 @@ async function renderTeachers() {
   let users = await getStudents();
   let html = '';
   users.forEach(user => {
-    if((user.hogwartsStudent === false) && (user.patronus)){
+    if((user.hogwartsStudent === false) && (user.patronus) && (user.house)){
       let htmlSegment = `<div class="Gborder">
-      <div class="teacher-card tooltip" id="${user.name}">
+      <div class="card tooltip ${user.house}" id="${user.name}">
       <img class="pfp" src="${user.image}"></img>
       <span class="tooltiptext">${user.patronus}</span>
         <div class="container">
@@ -346,9 +346,38 @@ async function renderTeachers() {
 
       html += htmlSegment;
     
-    } else if (user.hogwartsStudent === false){
+    } else if ((user.hogwartsStudent === false) && (user.house)){
       let htmlSegment = `<div class="Gborder">
-      <div class="teacher-card " id="${user.name}">
+      <div class="card ${user.house}" id="${user.name}">
+      <img class="pfp" src="${user.image}"></img>
+        <div class="container">
+        <ul>
+        <li><h2 contenteditable="true">${user.name}</h2></li>
+        <li><h2 contenteditable="true">${user.house}</h2></li>
+        </div>
+      </div>
+      </div>`;
+
+      html += htmlSegment;
+    
+    }else if ((user.hogwartsStudent === false) && (user.house === "") && (user.patronus)){
+      let htmlSegment = `<div class="Gborder">
+      <div class="card Default-house tooltip" id="${user.name}">
+      <img class="pfp" src="${user.image}"></img>
+      <span class="tooltiptext">${user.patronus}</span>
+        <div class="container">
+        <ul>
+        <li><h2 contenteditable="true">${user.name}</h2></li>
+        <li><h2 contenteditable="true">${user.house}</h2></li>
+        </div>
+      </div>
+      </div>`;
+
+      html += htmlSegment;
+    
+    }else if ((user.hogwartsStudent === false) && (user.house === "")){
+      let htmlSegment = `<div class="Gborder">
+      <div class="card Default-house" id="${user.name}">
       <img class="pfp" src="${user.image}"></img>
         <div class="container">
         <ul>
@@ -365,23 +394,6 @@ async function renderTeachers() {
   let container = document.querySelector('.container-Teachers');
   container.innerHTML = html;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
