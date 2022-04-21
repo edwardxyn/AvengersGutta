@@ -21,6 +21,7 @@ footer {
   transition: 0.3s;
   padding: 15px;
   margin: 15px;
+  border-radius: 2px;
 }
 
 .container-pfp {
@@ -36,6 +37,7 @@ h1 {
   padding-bottom: 5px;
   font-weight: lighter;
   color: white;
+  text-shadow: black;
 }
 
 h2 {
@@ -44,6 +46,7 @@ h2 {
   font-weight: lighter;
   margin-left: 10px;
   color: white;
+  text-shadow: black;
 }
 
 h3 {
@@ -54,10 +57,22 @@ h3 {
   margin-left: 10px;
 }
 
+.container-inf{
+  display: flex;
+  float: left;
+  flex-wrap: wrap;
+  background-color: rgba(70, 70, 70, 0.637);
+  border-radius: 2px;
+  width: 163px;
+  height: 140px;
+}
+
 .container {
   display: flex;
   float: left;
   flex-wrap: wrap;
+  background-color: rgba(70, 70, 70, 0.637);
+  margin-top: 5px;
 }
 
 .container-Teachers {
@@ -71,6 +86,7 @@ h3 {
   width: 163px;
   height: 227px;
   background-image: url(Images/Untitled.png);
+  border-radius: 2px;
 }
 
 body {
@@ -270,7 +286,7 @@ input {
 }
 
 .Hufflepuff {
-  background-color: yellow;
+  background-color: rgb(240, 237, 85);
 }
 
 .Default-house {
@@ -286,7 +302,7 @@ input {
 }
 
 .Hufflepuff:hover {
-  box-shadow: 0px 2px 25px 0 rgb(233, 162, 9);
+  box-shadow: 0px 2px 25px 0 rgb(240, 225, 12);
 }
 
 .Ravenclaw:hover {
