@@ -1,68 +1,63 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 main {
-
-    display: flex;
+  display: flex;
 }
 
 .card {
-    max-width: 165px;
-    height: 420px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    padding: 15px;
-    margin: 15px;
-  }
-  
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  
-  .container-pfp {
-    padding: 2px 16px;
-  }
+  max-width: 165px;
+  height: 420px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 15px;
+  margin: 15px;
+}
 
-  .pfp {
-      max-width: 163px;
-  }
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
 
-  h1 {
-      font-size: 22px;
-      padding-bottom: 5px;
-      font-weight: lighter;
-  }
+.container-pfp {
+  padding: 2px 16px;
+}
 
-  h2 {
-      font-size: 20px;
-      padding-bottom: 5px;
-      font-weight: lighter;
-  }
+.pfp {
+  max-width: 163px;
+}
 
-  h3 {
-      color: red;
-      font-size: 16px;
-      font-weight: lighter;
-  }
+h1 {
+  font-size: 22px;
+  padding-bottom: 5px;
+  font-weight: lighter;
+}
 
-  .container {
-      display: flex;
-      float: left;
-      flex-wrap: wrap;
-  }
+h2 {
+  font-size: 20px;
+  padding-bottom: 5px;
+  font-weight: lighter;
+}
 
-  li {
-      list-style-type: none;
-  }
+h3 {
+  color: red;
+  font-size: 16px;
+  font-weight: lighter;
+}
 
-  img {
-      width: 163px;
-      height: 227px;
-      background-image: url(/AvengersGutta/Images/Untitled.png);
-  }
+.container {
+  display: flex;
+  float: left;
+  flex-wrap: wrap;
+}
 
-  
+li {
+  list-style-type: none;
+}
+
+img {
+  width: 163px;
+  height: 227px;
+  background-image: url(/AvengersGutta/Images/Untitled.png);
+}

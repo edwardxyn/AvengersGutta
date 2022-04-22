@@ -101,14 +101,18 @@ getStudents("http://hp-api.herokuapp.com/api/characters/students").then(() => {
   listStudents();
 });
 
+//charecter Creator
+
 var staff = document.getElementById("charecter");
 
 charecterArray = [];
+imageArray = ["/Images/teacherpic.webp"];
 
 function addCharecter() {
   let nameInput = document.getElementById("name").value;
   let houseInput = document.getElementById("house").value;
   let patronusInput = document.getElementById("patronus").value;
+  let defaultPic = (document.getElementById("pic").src = imageArray[0]);
 
   if (document.getElementById("name").value.length == 0) {
     alert("Fill out name");
@@ -125,6 +129,10 @@ function addCharecter() {
     return false;
   }
 
+  imageArray.push({
+    image: defaultPic,
+  });
+
   charecterArray.push({
     name: nameInput,
     house: houseInput,
@@ -136,22 +144,26 @@ function addCharecter() {
 
 function charecters() {
   charecter.innerHTML = "";
-  for (let i = 0; i < charecterArray.length; i++)
-    charecter.innerHTML += `<li>
-        <p contenteditable="true">${charecterArray[i].name}</p>
+  for (let i = 0; i < imageArray.length; i++)
+    charecter.innerHTML += `<li> 
+        <img class="pfp" src="${imageArray[i].image}"</img>
       </li>`;
   for (let i = 0; i < charecterArray.length; i++)
     charecter.innerHTML += `<li>
-        <p contenteditable="true">${charecterArray[i].house}</p>
+        <h1>${charecterArray[i].name}</h1>
       </li>`;
   for (let i = 0; i < charecterArray.length; i++)
     charecter.innerHTML += `<li>
-        <p contenteditable="true">${charecterArray[i].patronus}</p><button class = "delete-button" id="delete" onclick="deleteCharecter(${i})">Delete</button>
+        <h1>${charecterArray[i].house}</h1>
+      </li>`;
+  for (let i = 0; i < charecterArray.length; i++)
+    charecter.innerHTML += `<li>
+        <h1>${charecterArray[i].patronus}</h1><button class = "delete-button" id="delete" onclick="deleteCharecter(${i})">Delete</button>
       </li>`;
 }
 
 function deleteCharecter(i) {
-  if (prompt("Vil du slette karakter? ja/nei") == "ja") {
+  if (prompt("Do you wish to delete character? type: yes/no") == "yes") {
     charecterArray.splice(i, 1);
     charecters();
   } else if ("nei") {
