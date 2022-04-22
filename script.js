@@ -9,30 +9,6 @@ async function getStudents() {
 }
 
 
-
-/** No clue how to make this work */
-async function filterHouses() {
-  let users = await getStudents();
-  if (users.filter(user => user.house === "Gryffindor")){
-    console.log("Gryffindor")
-  }
-  if(user => user.house === "Slytherin"){
-    console.log("Slytherin")
-  } 
-  if (user => user.house === "Ravenclaw"){
-    
-    console.log("Ravenclaw")
-  }
-  if (user => user.house === "Hufflepuff"){
-    
-      console.log("Hufflepuff")
-  }
-  if (user => user.house === ""){
-    
-  console.log("No house")
-  }
-}
-
 var gryffindorArray =[];
 var slytherinArray =[];
 var ravenclawArray =[];
@@ -44,51 +20,37 @@ const container = document.getElementsByClassName("container")
 teacherRender();
 potionClass();
 renderTeachers();
-filterHouses();
 studentRender();
 
 
 /** Function only places students into an array, but functions themselves do not use the array itself to produce student cards, this also goes for the teacher array function */
 async function studentRender() {
   let users = await getStudents();
-  let html = '';
-  users.forEach(user => {
+  
+  users.filter(user => {
     if((user.hogwartsStudent === true) && (user.house === "Gryffindor")){
-      let htmlSegment = ``;
-
-      html += htmlSegment;
       gryffindorArray.push({
       name: user.name,
     })
     } 
     if((user.hogwartsStudent === true) && (user.house === "Slytherin")){
-      let htmlSegment = ``;
-
-      html += htmlSegment;
       slytherinArray.push({
       name: user.name,
     })
     }
     if((user.hogwartsStudent === true) && (user.house === "Ravenclaw")){
-      let htmlSegment = ``;
-
-      html += htmlSegment;
       ravenclawArray.push({
       name: user.name,
     })
     } 
     if((user.hogwartsStudent === true) && (user.house === "Hufflepuff")){
-      let htmlSegment = ``;
-
-      html += htmlSegment;
       hufflepuffArray.push({
       name: user.name,
     })
     } 
     
   });
-  let container = document.querySelector('.container');
-  container.innerHTML = html;
+  
   console.log(gryffindorArray, hufflepuffArray, ravenclawArray, slytherinArray)
   
 }
@@ -109,6 +71,17 @@ async function teacherRender() {
 }
 
 
+const containerDiv = document.getElementsByClassName(".container");
+
+async function testFunction() {
+  let users = await getStudents();
+  containerDiv.innerHTML = "";
+  for (let i = 0; i < users.name; i++) {
+    containerDiv.innerHTML + `
+       <button id="delete-btn" onclick="deleteitemmore(${i})">Delete</button>`;
+  }
+  console.log(gryffindorArray)
+}
 
 /** Function for generating student cards for students in Gryffindor */
 async function renderUsersG() {
