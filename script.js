@@ -45,6 +45,7 @@ filterHouses();
 studentRender();
 teacherRender();
 
+/** Function only places students into an array, but functions themselves do not use the array itself to produce student cards, this also goes for the teacher array function */
 async function studentRender() {
   let users = await getStudents();
   let html = '';
@@ -509,7 +510,7 @@ function search_student() {
   }
 }
 
-/** delete button start !!Currently not working!! currently just deletes 1 element from the array */
+/** delete button start !!Currently not working!! currently just deletes 1 element from the array, as functions do not use the array to produce cards, i am unsure how to delete a card of the selected studen with this function */
 function deleteButton(i) {
   let del = "Are you sure you want to delete the selected item?";
   if (confirm(del) == true) {
