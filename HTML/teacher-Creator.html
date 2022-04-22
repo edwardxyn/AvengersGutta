@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <script src="/script.js"></script>
+    <link rel="stylesheet" href="/styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create a Teacher</title>
 </head>
 <header class="header">
-    <a href="index.html" class="logo"><img src="Images/Logo.png" class="harry-potter-logo" alt="Harry Potter logo"></img></a>
+    <a href="/index.html" class="logo"><img src="/Images/Logo.png" class="harry-potter-logo" alt="Harry Potter logo"></img></a>
     <ul class="menu">
         <li><input id="searchbar" onkeyup="search_student()" type="text"
             name="search" placeholder="Search Teachers.."></li>
-      <li><a href="index.html">FRONTPAGE</a></li>
-      <li><a href="teacher-Creator.html">TEACHER-CREATOR</a></li>
-      <li><a href="SecondIndex.html">POTIONS CLASSROOM</a></li>
+      <li><a href="/HTML/Index.html">FRONTPAGE</a></li>
+      <li><a href="/HTML/teacher-Creator.html">TEACHER-CREATOR</a></li>
+      <li><a href="/HTML/SecondIndex.html">POTIONS CLASSROOM</a></li>
     </ul>
 </header>
 <body>
-    <main>       
-    <div class="container-Teachers">
-        <div class="card tooltip" id="teacher-creator">
-        <li id="pic"></li>
-        <ul id="charecter">
-        </ul>
+    <main> 
+         <div class="charecter-creator">
+         <ul id="charecter"></ul>
         <ul>
           <li><h3>Create your own teacher</h3></li>
-          <li><input type="text" placeholder="Name" id="name" /></li>
-          <li><input type="text" placeholder="House" id="house" /></li>
-          <li><input type="text" placeholder="Patronus" id="patronus" /></li>
+          <li id="pic"></li>
+          <li><input class="input-field" type="text" placeholder="Name" id="name" /></li>
+          <li><input class="input-field" type="text" placeholder="House" id="house" /></li>
+          <li><input class="input-field" type="text" placeholder="Patronus" id="patronus" /></li>
           <br />
           <li><button onclick="addCharecter()">Create</button></li>
         </ul>
-        </div>
+     </div> 
+    <div class="container-Teachers">   
+        
     </div> 
+
 </main>
 </body>
 </html>

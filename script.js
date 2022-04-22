@@ -561,7 +561,7 @@ function deleteButton(i) {
       //charecter Creator
 
 charecterArray = [];
-imageArray = ["/Images/teacherpic.webp"];
+imageArray = ["/Images/default-teacher.webp"];
 
 function addCharecter() {
   let nameInput = document.getElementById("name").value;
@@ -619,6 +619,6 @@ function deleteCharecter(i) {
   if (prompt("Do you wish to delete character? type: yes/no") == "yes") {
     charecterArray.splice(i, 1), imageArray.splice(i, 1);
     charecters();
-  } else if ("nei") {
+  } else if ("no") {
   }
 }
