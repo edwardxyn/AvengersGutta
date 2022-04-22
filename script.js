@@ -557,3 +557,5 @@ function deleteButton(i) {
   }
   console.log(gryffindorArray);
 }
+
+
