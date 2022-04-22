@@ -103,16 +103,14 @@ getStudents("http://hp-api.herokuapp.com/api/characters/students").then(() => {
 
 //charecter Creator
 
-var staff = document.getElementById("charecter");
-
 charecterArray = [];
-imageArray = ["/Images/teacherpic.webp"];
+imageArray = ["/Images/teacherpic.webp",];
 
 function addCharecter() {
   let nameInput = document.getElementById("name").value;
   let houseInput = document.getElementById("house").value;
   let patronusInput = document.getElementById("patronus").value;
-  let defaultPic = (document.getElementById("pic").src = imageArray[0]);
+  let defaultPic = document.getElementById("pic").src = imageArray[0];
 
   if (document.getElementById("name").value.length == 0) {
     alert("Fill out name");
@@ -130,7 +128,7 @@ function addCharecter() {
   }
 
   imageArray.push({
-    image: defaultPic,
+    defaultImg: defaultPic,
   });
 
   charecterArray.push({
@@ -144,10 +142,8 @@ function addCharecter() {
 
 function charecters() {
   charecter.innerHTML = "";
-  for (let i = 0; i < imageArray.length; i++)
-    charecter.innerHTML += `<li> 
-        <img class="pfp" src="${imageArray[i].image}"</img>
-      </li>`;
+  for (let i = 1; i < imageArray.length; i++)
+    charecter.innerHTML += `<img class="pfp" src="${imageArray[i].defaultImg}"></img>`;
   for (let i = 0; i < charecterArray.length; i++)
     charecter.innerHTML += `<li>
         <h1>${charecterArray[i].name}</h1>
@@ -164,7 +160,7 @@ function charecters() {
 
 function deleteCharecter(i) {
   if (prompt("Do you wish to delete character? type: yes/no") == "yes") {
-    charecterArray.splice(i, 1);
+    charecterArray.splice(i, 1), imageArray.splice(i, 1);
     charecters();
   } else if ("nei") {
   }
