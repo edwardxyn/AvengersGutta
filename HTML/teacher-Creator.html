@@ -19,9 +19,22 @@
     </ul>
 </header>
 <body>
-    <main>    
-    <div class="container-Teachers">  
-    </div>   
+    <main>       
+    <div class="container-Teachers">
+        <div class="card tooltip" id="teacher-creator">
+        <li id="pic"></li>
+        <ul id="charecter">
+        </ul>
+        <ul>
+          <li><h3>Create your own teacher</h3></li>
+          <li><input type="text" placeholder="Name" id="name" /></li>
+          <li><input type="text" placeholder="House" id="house" /></li>
+          <li><input type="text" placeholder="Patronus" id="patronus" /></li>
+          <br />
+          <li><button onclick="addCharecter()">Create</button></li>
+        </ul>
+        </div>
+    </div> 
 </main>
 </body>
 </html>
