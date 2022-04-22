@@ -39,11 +39,14 @@ var ravenclawArray =[];
 var hufflepuffArray =[];
 var teacherArray =[];
 
+const container = document.getElementsByClassName("container")
+
+teacherRender();
 potionClass();
 renderTeachers();
 filterHouses();
 studentRender();
-teacherRender();
+
 
 /** Function only places students into an array, but functions themselves do not use the array itself to produce student cards, this also goes for the teacher array function */
 async function studentRender() {
@@ -86,26 +89,22 @@ async function studentRender() {
   });
   let container = document.querySelector('.container');
   container.innerHTML = html;
-  console.log(gryffindorArray, slytherinArray, hufflepuffArray, ravenclawArray)
+  console.log(gryffindorArray, hufflepuffArray, ravenclawArray, slytherinArray)
   
 }
 
 async function teacherRender() {
   let users = await getStudents();
-  let html = '';
+  
   users.forEach(user => {
     if((user.hogwartsStudent === false)){
-      let htmlSegment = ``;
-
-      html += htmlSegment;
       teacherArray.push({
       name: user.name,
     })
     } 
     
   });
-  let container = document.querySelector('.container');
-  container.innerHTML = html;
+  
   console.log(teacherArray)
 }
 
@@ -127,7 +126,7 @@ async function renderUsersG() {
         <li><h2>Age:${ "2020" - user.yearOfBirth}</h2></li>
         <li><h2>Alive</h2></li>
           </ul>
-        </div><button id="delete-btn" onclick="deleteButton()">Delete</button></li>
+          </div>
       </div>
       </div>`;
 
@@ -144,7 +143,7 @@ async function renderUsersG() {
         <li><h2>Age:Unknown</h2></li>
         <li><h2>Alive</h2></li>
           </ul>
-          </div><button id="delete-btn" onclick="deleteButton()">Delete</button></li>
+          
         </div>
       </div>
       </div>`;
@@ -159,7 +158,7 @@ async function renderUsersG() {
         <li><h2>${user.house}</h2></li>
         <li><h3>Dead</h3></li>
           </ul>
-          </div><button id="delete-btn" onclick="deleteButton()">Delete</button></li>
+          
         </div>
       </div>
       </div>`;
@@ -189,7 +188,7 @@ async function renderUsersS() {
         <li><h2>Age:${"2020" - user.yearOfBirth}</h2></li>
         <li><h2>Alive</h2></li>
           </ul>
-          </div><button id="delete-btn" onclick="deleteButton()">Delete</button></li>
+          
         </div>
       </div>
       </div>`;
@@ -206,7 +205,7 @@ async function renderUsersS() {
         <li><h2>Age:Unknown</h2></li>
         <li><h2>Alive</h2></li>
           </ul>
-          </div><button id="delete-btn" onclick="deleteButton()">Delete</button></li>
+          
         </div>
       </div>
       </div>`;
@@ -221,7 +220,7 @@ async function renderUsersS() {
         <li><h2>${user.house}</h2></li>
         <li><h3>Dead</h3></li>
           </ul>
-          </div><button id="delete-btn" onclick="deleteButton()">Delete</button></li>
+          
         </div>
       </div>
       </div>`;
@@ -249,7 +248,7 @@ async function renderUsersR() {
         <li><h2>Age:${"2020" - user.yearOfBirth}</h2></li>
         <li><h2>Alive</h2></li>
           </ul>
-          </div><button id="delete-btn" onclick="deleteButton()">Delete</button></li>
+          
         </div>
       </div>
       </div>`;
@@ -266,7 +265,7 @@ async function renderUsersR() {
         <li><h2>Age:Unknown</h2></li>
         <li><h2>Alive</h2></li>
           </ul>
-          </div><button id="delete-btn" onclick="deleteButton()">Delete</button></li>
+          
         </div>
       </div>
       </div>`;
@@ -281,7 +280,7 @@ async function renderUsersR() {
         <li><h2>${user.house}</h2></li>
         <li><h3>Dead</h3></li>
           </ul>
-          </div><button id="delete-btn" onclick="deleteButton()">Delete</button></li>
+          
         </div>
       </div>
       </div>`;
@@ -310,7 +309,7 @@ async function renderUsersH() {
         <li><h2>Age:${"2020" - user.yearOfBirth} </h2></li>
         <li><h2>Alive</h2></li>
           </ul>
-          </div><button id="delete-btn" onclick="deleteButton()">Delete</button></li>
+          
         </div>
       </div>
       </div>`;
@@ -328,7 +327,7 @@ async function renderUsersH() {
         <li><h2>Age:Unknown</h2></li>
         <li><h2>Alive</h2></li>
           </ul>
-          </div><button id="delete-btn" onclick="deleteButton()">Delete</button></li>
+          
         </div>
       </div>
       </div>`;
@@ -344,7 +343,7 @@ async function renderUsersH() {
         <li><h2>${user.house}</h2></li>
         <li><h3>Dead</h3></li>
           </ul>
-          </div><button id="delete-btn" onclick="deleteButton()">Delete</button></li>
+          
         </div>
       </div>
       </div>`;
@@ -425,12 +424,13 @@ async function potionClass() {
 */
 
 /** Function for generating teacher cards */
+
 async function renderTeachers() {
   let users = await getStudents();
   let html = '';
   users.forEach(user => {
     if((user.hogwartsStudent === false) && (user.patronus) && (user.house)){
-      let htmlSegment = `<div class="Gborder">
+      let htmlSegment = `<div class="Tborder">
       <div class="card tooltip ${user.house}" id="${user.name}">
       <img class="pfp" src="${user.image}"></img>
       <span class="tooltiptext">${user.patronus}</span>
@@ -438,6 +438,7 @@ async function renderTeachers() {
         <ul>
         <li><h2 contenteditable="true">${user.name}</h2></li>
         <li><h2 contenteditable="true">${user.house}</h2></li>
+        </div><button id="delete-btn" class="${user.name}" onclick="deleteButton()">Delete</button></li>
         </div>
       </div>
       </div>`;
@@ -445,13 +446,14 @@ async function renderTeachers() {
       html += htmlSegment;
     
     } else if ((user.hogwartsStudent === false) && (user.house)){
-      let htmlSegment = `<div class="Gborder">
+      let htmlSegment = `<div class="Tborder">
       <div class="card ${user.house}" id="${user.name}">
       <img class="pfp" src="${user.image}"></img>
         <div class="container-inf">
         <ul>
         <li><h2 contenteditable="true">${user.name}</h2></li>
         <li><h2 contenteditable="true">${user.house}</h2></li>
+        </div><button id="delete-btn" class="${user.name}" onclick="deleteButton()">Delete</button></li>
         </div>
       </div>
       </div>`;
@@ -459,7 +461,7 @@ async function renderTeachers() {
       html += htmlSegment;
     
     }else if ((user.hogwartsStudent === false) && (user.house === "") && (user.patronus)){
-      let htmlSegment = `<div class="Gborder">
+      let htmlSegment = `<div class="Tborder">
       <div class="card Default-house tooltip" id="${user.name}">
       <img class="pfp" src="${user.image}"></img>
       <span class="tooltiptext">${user.patronus}</span>
@@ -467,6 +469,7 @@ async function renderTeachers() {
         <ul>
         <li><h2 contenteditable="true">${user.name}</h2></li>
         <li><h2 contenteditable="true">${user.house}</h2></li>
+        </div><button id="delete-btn" class="${user.name}" onclick="deleteButton()">Delete</button></li>
         </div>
       </div>
       </div>`;
@@ -474,13 +477,14 @@ async function renderTeachers() {
       html += htmlSegment;
     
     }else if ((user.hogwartsStudent === false) && (user.house === "")){
-      let htmlSegment = `<div class="Gborder">
+      let htmlSegment = `<div class="Tborder">
       <div class="card Default-house" id="${user.name}">
       <img class="pfp" src="${user.image}"></img>
         <div class="container-inf">
         <ul>
         <li><h2 contenteditable="true">${user.name}</h2></li>
         <li><h2 contenteditable="true">${user.house}</h2></li>
+        </div><button id="delete-btn" class="${user.name}" onclick="deleteButton()">Delete</button></li>
         </div>
       </div>
       </div>`;
@@ -510,14 +514,18 @@ function search_student() {
   }
 }
 
-/** delete button start !!Currently not working!! currently just deletes 1 element from the array, as functions do not use the array to produce cards, i am unsure how to delete a card of the selected studen with this function */
+/** delete button start !!Currently not working!! currently just deletes 1 element from the array, as functions do not use the array to produce cards, i am unsure how to delete a card of the selected teacher with this function the promp also runs 2-3 times depending on what the answer is */
 function deleteButton(i) {
-  let del = "Are you sure you want to delete the selected item?";
-  if (confirm(del) == true) {
-    gryffindorArray.splice(i, 1);
-    renderUsersG();
-  } else {
-    alert;
+  let del = prompt ("are you sure you want to delete this teacher?");
+  if (del === "Yes", "yes") {
+    teacherArray.splice(i, 1);
+    renderTeachers();
+    console.log(teacherArray)
+  } else if (del === "No", "no") {
+    console.log("Teacher has been spared")
   }
-  console.log(gryffindorArray)
+  
 }
+
+
+
