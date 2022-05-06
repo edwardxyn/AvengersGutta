@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+
+    <script src="/studentCreator.js"></script>
+
     <link rel="stylesheet" href="/styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Harry Potter!</title>
 </head>
 <body>
@@ -15,12 +16,13 @@
         <ul class="menu">
             <li><input id="searchbar" onkeyup="search_student()" type="text"
                 name="search" placeholder="Search students.."></li>
-          <li><a href="/HTML/index.html">FRONTPAGE</a></li>
-          <li><a href="/HTML/teacher-Creator.html">TEACHER-CREATOR</a></li>
-          <li><a href="/HTML/potion-classroom.html">POTIONS CLASSROOM</a></li>
+
+          <li><a href="/index.html">FRONTPAGE</a></li>
+          <li><a href="/teacher-Creator.html">TEACHER-CREATOR</a></li>
+          <li><a href="/SecondIndex.html">POTIONS CLASSROOM</a></li>
+
         </ul>
     </header>
-    
     <main>
         <div class="main-container">
             <div class="houses-container">
@@ -53,6 +55,19 @@
             
                 
             </div>
+            <br> <br> <br> <br>
+            <div class="charecter-creator"> 
+            <ul id="charecter"></ul>
+            <ul>
+                <li><h3>Create your own student</h3></li>
+                <li id="pic"></li>
+                <li><input class="input-field" type="text" placeholder="Name" id="name" /></li>
+                <li><input class="input-field" type="text" placeholder="House" id="house" /></li>
+                <li><input class="input-field" type="text" placeholder="Patronus" id="patronus" /></li>
+                <br />
+                <li><button onclick="addCharecter()">Create</button></li>
+            </ul>
+            </div> 
         </div>
     </main>
     <footer><div class="container"></div></footer>
