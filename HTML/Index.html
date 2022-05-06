@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/script.js"></script>
-    <link rel="stylesheet" href="/styles.css">
+    
+    <link rel="stylesheet" href="/task/styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,13 +11,13 @@
 </head>
 <body>
     <header class="header">
-        <a href="/index.html" class="logo"><img src="/Images/Logo.png" class="harry-potter-logo" alt="Harry Potter logo"></img></a>
+        <a href="/index.html" class="logo"><img src="/task/Images/Logo.png" class="harry-potter-logo" alt="Harry Potter logo"></img></a>
         <ul class="menu">
             <li><input id="searchbar" onkeyup="search_student()" type="text"
                 name="search" placeholder="Search students.."></li>
-          <li><a href="/index.html">FRONTPAGE</a></li>
-          <li><a href="/teacher-Creator.html">TEACHER-CREATOR</a></li>
-          <li><a href="/HTML/potion-classroom.html">POTIONS CLASSROOM</a></li>
+          <li><a href="/task/HTML/index.html">FRONTPAGE</a></li>
+          <li><a href="/task/HTML/teacher-Creator.html">TEACHER-CREATOR</a></li>
+          <li><a href="/task/HTML/potion-classroom.html">POTIONS CLASSROOM</a></li>
         </ul>
     </header>
     
@@ -27,28 +27,28 @@
                 <!-- Div's have the same class name because of hover effect -->
                 <div class="houses-box">
                     
-                    <img src="/Images/Gryffindor.png" 
+                    <img src="/task/Images/Gryffindor.png" 
                     class="gryffindor-img"
                     alt="Gryffindor crest"
-                    onclick="renderUsersG()">
+                    onclick="renderUsersGryffindor()">
                 </div>
                 <div class="houses-box">
-                    <img src="/Images/Hufflepuff.png" 
+                    <img src="/task/Images/Hufflepuff.png" 
                     class="hufflepuff-img"
                     alt="Hufflepuff crest"
-                    onclick="renderUsersH()">
+                    onclick="renderUsersHufflepuff()">
                 </div>
                 <div class="houses-box">
-                    <img src="/Images/Ravenclaw.png" 
+                    <img src="/task/Images/Ravenclaw.png" 
                     class="ravenclaw-img"
                     alt="Ravenclaw crest"
-                    onclick="renderUsersR()">
+                    onclick="renderUsersRavenclaw()">
                 </div>
                 <div class="houses-box">
-                    <img src="/Images/Slytherin.png" 
+                    <img src="/task/Images/Slytherin.png" 
                     class="slytherin-img"
                     alt="Slytherin crest"
-                    onclick="renderUsersS()">
+                    onclick="renderUsersSlytherin()">
                 </div>
             
                 
@@ -57,4 +57,5 @@
     </main>
     <footer><div class="container"></div></footer>
 </body>
+<script src="/task/cardGeneration.js"></script>
 </html>
