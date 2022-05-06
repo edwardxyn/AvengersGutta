@@ -1,5 +1,5 @@
 
-
+/** !!!!!MINIMIZE BEFORE CONTINUING DOWNWARDS!!!!! */
   const characterArray= [
     {
       name: "Harry Potter",
@@ -10567,17 +10567,3 @@ function search_student() {
     }
   }
 }
-
-/** delete button start !!Currently not working!! currently just deletes 1 element from the array, as functions do not use the array to produce cards, i am unsure how to delete a card of the selected student with this function */
-function deleteButton(i) {
-  let del = "Are you sure you want to delete the selected item?";
-  if ((confirm(del) == true) && (document.getElementById("${user.name}") === "${user.name}")){
-    gryffindorArray.splice(i, 1);
-    renderUsersG();
-  } else {
-    alert;
-  }
-  console.log(gryffindorArray);
-}
-
-
