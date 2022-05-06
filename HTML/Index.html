@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <script src="/script.js"></script>
+    <script src="/studentCreator.js"></script>
     <link rel="stylesheet" href="/styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,6 +54,19 @@
             
                 
             </div>
+            <br> <br> <br> <br>
+            <div class="charecter-creator"> 
+            <ul id="charecter"></ul>
+            <ul>
+                <li><h3>Create your own student</h3></li>
+                <li id="pic"></li>
+                <li><input class="input-field" type="text" placeholder="Name" id="name" /></li>
+                <li><input class="input-field" type="text" placeholder="House" id="house" /></li>
+                <li><input class="input-field" type="text" placeholder="Patronus" id="patronus" /></li>
+                <br />
+                <li><button onclick="addCharecter()">Create</button></li>
+            </ul>
+            </div> 
         </div>
     </main>
     <footer><div class="container"></div></footer>
