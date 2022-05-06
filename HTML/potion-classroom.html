@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/pc.css" />
+    <title>Potions Classroom</title>
+  </head>
+  <body>
+    <header class="header">
+        <a href="index.html" class="logo"><img src="/Images/Logo.png" class="harry-potter-logo" alt="Harry Potter logo"></img></a>
+        <ul class="menu">
+            <li><input id="searchbar" onkeyup="search_student()" type="text"
+                name="search" placeholder="Search students.."></li>
+          <li><a href="/HTML/index.html">FRONTPAGE</a></li>
+          <li><a href="/HTML/teacher-Creator.html">TEACHER-CREATOR</a></li>
+          <li><a href="/HTML/potion-classroom.html">POTIONS CLASSROOM</a></li>
+        </ul>
+    </header>
+    <main>
+      <div class="container">
+        <div class="item"><h1>Potions Classroom</h1></div>
+        <div class="item-2">
+          <div class="box">
+            <h3>Professor</h3>
+
+            <input id="text" type="button" value="Abrakadabra!" class="text" />
+
+            <div id="teacher"></div>
+          </div>
+
+          <div class="click">
+            <input
+              type="button"
+              id="classroom-btn"
+              value="Start undervisning"
+              class="start-btn"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/potionClass.js"></script>
+  </body>
+</html>

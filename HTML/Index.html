@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/script.js"></script>
+
     <script src="/studentCreator.js"></script>
+
     <link rel="stylesheet" href="/styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Harry Potter!</title>
 </head>
 <body>
@@ -16,12 +16,13 @@
         <ul class="menu">
             <li><input id="searchbar" onkeyup="search_student()" type="text"
                 name="search" placeholder="Search students.."></li>
+
           <li><a href="/index.html">FRONTPAGE</a></li>
           <li><a href="/teacher-Creator.html">TEACHER-CREATOR</a></li>
           <li><a href="/SecondIndex.html">POTIONS CLASSROOM</a></li>
+
         </ul>
     </header>
-    
     <main>
         <div class="main-container">
             <div class="houses-container">
@@ -31,25 +32,25 @@
                     <img src="/Images/Gryffindor.png" 
                     class="gryffindor-img"
                     alt="Gryffindor crest"
-                    onclick="renderUsersG()">
+                    onclick="renderUsersGryffindor()">
                 </div>
                 <div class="houses-box">
                     <img src="/Images/Hufflepuff.png" 
                     class="hufflepuff-img"
                     alt="Hufflepuff crest"
-                    onclick="renderUsersH()">
+                    onclick="renderUsersHufflepuff()">
                 </div>
                 <div class="houses-box">
                     <img src="/Images/Ravenclaw.png" 
                     class="ravenclaw-img"
                     alt="Ravenclaw crest"
-                    onclick="renderUsersR()">
+                    onclick="renderUsersRavenclaw()">
                 </div>
                 <div class="houses-box">
                     <img src="/Images/Slytherin.png" 
                     class="slytherin-img"
                     alt="Slytherin crest"
-                    onclick="renderUsersS()">
+                    onclick="renderUsersSlytherin()">
                 </div>
             
                 
@@ -70,6 +71,6 @@
         </div>
     </main>
     <footer><div class="container"></div></footer>
-    <button onclick="testFunction()">TEST</button>
 </body>
+<script src="/cardGeneration.js"></script>
 </html>
