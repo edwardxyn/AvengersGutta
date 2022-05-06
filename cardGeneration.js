@@ -1,5 +1,5 @@
 
-/** !!!!!MINIMIZE BEFORE CONTINUING DOWNWARDS!!!!! */
+/** !!!!!MINIMIZE BEFORE GOING FURTHER!!!!!! */
   const characterArray= [
     {
       name: "Harry Potter",
@@ -10567,3 +10567,7 @@ function search_student() {
     }
   }
 }
+
+
+
+
